@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BOT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+<body>
+	<div class=container>
+	<h1>SimpleChat Home</h1>
+	<p>The simplest possible chatterbot.</p>
+	<hr/>
+	<h2>Ask:</h2>
+	<p>Ask me a question</p>
+	<form action="/ask" method="GET">
+		<p>
+		Bot ID: <input type=text name=b />
+		</p>
+		<p>
+		Question: <input type=text name=q />
+		</p>
+		<p>
+		<input type=submit />
+		</p>
+	</form>
+	<hr/>
+	<h2>Feed:</h2>
+	<p>Feed me some data.  (I'm hungry).</p>
+	<form action="/feed" method="POST" enctype="multipart/form-data">{% csrf_token %}
+		<p>
+		Bot ID: <input type=text name=b />
+		</p>
+		<p>
+		Data: <input type=file name=f />
+		</p>
+		<p>
+		<input type=submit />
+		</p>
+    </form>
+	<hr/>
+	<h2>Create:</h2>
+	<p>Spawn a new chatterer.</p>
+	<form action="/new" method="GET" >
+		<p>
+		Name: <input type=text name=n />
+		</p>
+		<p>
+		<input type=submit />
+		</p>
+    </form>
+    <hr/>
+	<h2>Interact:</h2>
+	<p>Open an interractive session.</p>
+	<form action="/interact" method="GET" >
+		<p>
+		Bot ID: <input type=text name=b />
+		</p>
+		<p>
+		<input type=submit />
+		</p>
+    </form>
+
+
+	</div>
+
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
